@@ -16,7 +16,11 @@ require (
 	golang.org/x/net v0.8.0
 )
 
-require github.com/google/uuid v1.6.0
+require (
+	github.com/aws/aws-lambda-go v1.49.0
+	github.com/google/uuid v1.6.0
+	github.com/valyala/fasthttprouter v0.0.0-20160217050331-24073dd8f323
+)
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
@@ -31,7 +35,6 @@ require (
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/spf13/cast v1.7.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasthttprouter v0.0.0-20160217050331-24073dd8f323 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.1.1 // indirect
 	github.com/xdg-go/stringprep v1.0.3 // indirect
