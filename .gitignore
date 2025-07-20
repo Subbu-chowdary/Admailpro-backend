@@ -1,0 +1,59 @@
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Build directories
+/bin/
+/build/
+/dist/
+
+# Vendor directory (if using Go modules)
+vendor/
+
+# Redis dump
+dump.rdb
+appendonly.aof
+
+# Dependency cache
+
+# IDE/editor config
+.vscode/
+.idea/
+*.swp
+*.swo
+*.log
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# Secrets & config
+.env
+.env.*
+config.yaml
+*.local
+*.bak
+
+# Test & coverage
+*.coverprofile
+*.testlog
+coverage.*
+
+# Asynq queue artifacts
+asynq.db
+asynqmon.db
+
+# Node-related (if frontend gets added)
+node_modules/
+*.tsbuildinfo
+*.eslintcache
+
+# Temporary files
+*~
+*.tmp
+*.bak
