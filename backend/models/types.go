@@ -17,14 +17,16 @@ type EmailJob struct {
     ID              string `json:"id" bson:"_id"`
     Request         EmailRequest `json:"request" bson:"request"`
     Subdomain       string `json:"subdomain" bson:"subdomain"`
-    // ❌ Removed IP field
     UserID          string `json:"userId" bson:"userId"`
     CampaignID      string `json:"campaignId,omitempty" bson:"campaignId,omitempty"`             // New field
     RecipientListID string `json:"recipientListId,omitempty" bson:"recipientListId,omitempty"` // New field
     Status          string `json:"status" bson:"status"`
+	// NEW fields for SES
+	ConfigSet string `bson:"config_set,omitempty" json:"config_set,omitempty"`
+	Region    string `bson:"region,omitempty" json:"region,omitempty"`
+
 }
 
-// ❌ Removed IPPair struct and replaced with a simpler Subdomain struct
 type Subdomain struct {
     ID        string  `json:"id" bson:"_id"` // A unique ID for the subdomain record
     Name      string  `json:"name" bson:"name"`
@@ -32,7 +34,6 @@ type Subdomain struct {
     SentCount int64   `json:"sentCount" bson:"sentCount"`
 }
 
-// ❌ Removed LinkMapping struct
 
 // New Campaign Model
 type Campaign struct {

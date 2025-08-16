@@ -9,10 +9,12 @@ import (
 )
 
 type Config struct {
-	MongoURI       string
-	RedisAddr      string
-	JWTSecret      string
-	AWSCredentials AWSCreds
+	MongoURI        string
+	RedisAddr       string
+	JWTSecret       string
+	AWSCredentials  AWSCreds
+	DefaultConfigSet string // Add default SES configuration set
+	DefaultSESRegion string // Optional: separate SES region override
 }
 
 type AWSCreds struct {
@@ -43,6 +45,9 @@ func GetConfig() *Config {
 				SecretKey: getEnv("AWS_SECRET_KEY", ""),
 				Region:    getEnv("AWS_REGION", "us-east-1"),
 			},
+
+			DefaultConfigSet: getEnv("SES_CONFIG_SET", "admailpro-configset-1"),
+			DefaultSESRegion: getEnv("SES_REGION", getEnv("AWS_REGION", "us-east-1")),
 		}
 	})
 
